@@ -15,7 +15,7 @@ global contours
 #########################################################################################
 #   PREPROCESSING THE IMAGE
 #########################################################################################
-image = cv.imread('OMR 5.png')
+image = cv.imread('OMR 3.png')
 image = cv.resize(image, (img_width, img_height))
 img_cont_2 = image.copy()
 Canny, Erode = functions.preprocessing(image)
