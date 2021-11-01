@@ -1,6 +1,7 @@
 # Checking-OMR-Sheets
 
 Marking of the OMR Sheets according to the number of correct options selected by individual using OpenCV
+## [OMR Marking](OMR_Marking.py)
 
 ## User Inputs
 1. Number of questions
@@ -11,7 +12,6 @@ Marking of the OMR Sheets according to the number of correct options selected by
 
 
 [Function.py](function.py) is the python file consisting multiple functions to perform specific task which could be required in many such project again and again.
-[OMR Marking](OMR_Marking.py)
 ### Requirements
 - OpenCV
 - NumPy
@@ -23,7 +23,7 @@ Inputs of **get_countour** function are as follows:
 - Filters (Minimum number of boundaries)
 - Draw (Whether to draw the contours or not)
 - MinArea (Minimum area of the contour to be considered)
-(contours, area, peri, approx, len(approx), center, bbox)
+
 Outputs of **get_countour** function are as follows:
 - List
   - Contours
@@ -33,14 +33,14 @@ Outputs of **get_countour** function are as follows:
   - Center of the contour
   - Bounding Box 
 - Image with Contours drawn or not depending upon the parameter
+Note: Contours are in decreasing order.
+---
+Inputs of **reorder** function is points.
 
-> Note: Contours are in decreasing order.
+This function is to reorder the points in order to get points for Warp Per.
 
 ---
-Inputs of **reorder** function is points
-This function is to reorder the points in order to get points for Warp Per
----
-Inputs of **get_warp** are as follows:
+Inputs of **get_warp** function are as follows:
 - Image
 - Width and Height
 - Points
@@ -52,7 +52,6 @@ Inputs of **get_contour_circle** function are as follows:
 - Canny Image
 - Draw
 - minArea
-(contours,center, radius, bbox)
 Outpot of  **get_contour_circle** function are as follows:
 - List
   - Contours
@@ -60,3 +59,26 @@ Outpot of  **get_contour_circle** function are as follows:
   - Radius
   - Bounding Box
 - Countoured Image
+---
+Inputs of **splitting** function are as follows:
+- Image
+- Number of questions
+- Number of choices/options
+Outputs of **splitting** function is matrix of images of options.
+---
+Inputs of **show_answers** function are as follows:
+- Image
+- Correct Answers
+- Selected Answers
+- Grades
+- Number of Questions
+- Number of choices
+Outputs of the fuction is the image with results on it.
+---
+Function **get_warp_inverse** is almost similar to get_warp function but instead of extracting the warp image, this function insert the warp image on the original image.
+
+---
+Inputs of **concat** function are as follows:
+- Scale (Scale of the original image)
+- List of Images/Videos
+This funciton gives the concat images/videos given as input to it in the list, irrespective of the nature, scale, dimensions of the image/video
