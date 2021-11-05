@@ -3,19 +3,17 @@
 Marking of the OMR Sheets according to the number of correct options selected by individual using OpenCV
 ## [OMR Marking](OMR_Marking.py)
 
+## Requirements
+- OpenCV
+- NumPy
+- [Function.py](function.py) which is the python file consisting multiple functions to perform specific task which could be required in many such project again and again.
+---
 ## User Inputs
 1. Number of questions
 2. Number of options/choices per question
 3. Actual or Correct Answers
 4. Maximum area of the circles to be considered for option
 5. Width and Height of the image for display purpose
-
-
-[Function.py](function.py) is the python file consisting multiple functions to perform specific task which could be required in many such project again and again.
-### Requirements
-- OpenCV
-- NumPy
-- [Function.py](function.py)
 ---
 Inputs of **get_countour** function are as follows:
 - Image
@@ -33,11 +31,11 @@ Outputs of **get_countour** function are as follows:
   - Center of the contour
   - Bounding Box 
 - Image with Contours drawn or not depending upon the parameter
-Note: Contours are in decreasing order.
+Note: Contours are in decreasing order w.r.t the area covered by the contour.
 ---
 Inputs of **reorder** function is points.
 
-This function is to reorder the points in order to get points for Warp Per.
+This function is to reorder the given points in proper order to get points for Warp Perspective.
 
 ---
 Inputs of **get_warp** function are as follows:
@@ -45,14 +43,14 @@ Inputs of **get_warp** function are as follows:
 - Width and Height
 - Points
 - Final Width and Height
-This function gives the warped image of the input image
+This function gives the warped image of the input image within given data points
 ---
 Inputs of **get_contour_circle** function are as follows:
 - Original Image
 - Canny Image
 - Draw
 - minArea
-Outpot of  **get_contour_circle** function are as follows:
+Outputs of  **get_contour_circle** function are as follows:
 - List
   - Contours
   - Center of the contours
@@ -64,7 +62,7 @@ Inputs of **splitting** function are as follows:
 - Image
 - Number of questions
 - Number of choices/options
-Outputs of **splitting** function is matrix of images of options.
+Output of **splitting** function is matrix of images of options.
 ---
 Inputs of **show_answers** function are as follows:
 - Image
@@ -73,7 +71,7 @@ Inputs of **show_answers** function are as follows:
 - Grades
 - Number of Questions
 - Number of choices
-Outputs of the fuction is the image with results on it.
+Output of the fuction is the image of the OMR-Sheet with results/answers on it.
 ---
 Function **get_warp_inverse** is almost similar to get_warp function but instead of extracting the warp image, this function insert the warp image on the original image.
 
