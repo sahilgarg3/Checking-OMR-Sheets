@@ -15,14 +15,14 @@ Marking of the OMR Sheets according to the number of correct options selected by
 4. Maximum area of the circles to be considered for option
 5. Width and Height of the image for display purpose
 ---
-Inputs of **get_countour** function are as follows:
+Inputs of `get_countour` function are as follows:
 - Image
 - Canny Image
 - Filters (Minimum number of boundaries)
 - Draw (Whether to draw the contours or not)
 - MinArea (Minimum area of the contour to be considered)
 
-Outputs of **get_countour** function are as follows:
+Outputs of `get_countour` function are as follows:
 - List
   - Contours
   - Area of the contours
@@ -33,24 +33,24 @@ Outputs of **get_countour** function are as follows:
 - Image with Contours drawn or not depending upon the parameter
 Note: Contours are in decreasing order w.r.t the area covered by the contour.
 ---
-Inputs of **reorder** function is points.
+Inputs of `reorder` function is points.
 
 This function is to reorder the given points in proper order to get points for Warp Perspective.
 
 ---
-Inputs of **get_warp** function are as follows:
+Inputs of `get_warp` function are as follows:
 - Image
 - Width and Height
 - Points
 - Final Width and Height
 This function gives the warped image of the input image within given data points
 ---
-Inputs of **get_contour_circle** function are as follows:
+Inputs of `get_contour_circle` function are as follows:
 - Original Image
 - Canny Image
 - Draw
 - minArea
-Outputs of  **get_contour_circle** function are as follows:
+Outputs of  `get_contour_circle` function are as follows:
 - List
   - Contours
   - Center of the contours
@@ -58,13 +58,13 @@ Outputs of  **get_contour_circle** function are as follows:
   - Bounding Box
 - Countoured Image
 ---
-Inputs of **splitting** function are as follows:
+Inputs of `splitting` function are as follows:
 - Image
 - Number of questions
 - Number of choices/options
-Output of **splitting** function is matrix of images of options.
+Output of `splitting` function is matrix of images of options.
 ---
-Inputs of **show_answers** function are as follows:
+Inputs of `show_answers` function are as follows:
 - Image
 - Correct Answers
 - Selected Answers
@@ -73,13 +73,24 @@ Inputs of **show_answers** function are as follows:
 - Number of choices
 Output of the fuction is the image of the OMR-Sheet with results/answers on it.
 ---
-Function **get_warp_inverse** is almost similar to get_warp function but instead of extracting the warp image, this function insert the warp image on the original image.
+Function `get_warp_inverse` is almost similar to get_warp function but instead of extracting the warp image, this function insert the warp image on the original image.
 
 ---
-Inputs of **concat** function are as follows:
+Inputs of `concat` function are as follows:
 - Scale (Scale of the original image)
 - List of Images/Videos
  
 This funciton gives the concatinated window of the images/videos given as input to it in the list, irrespective of the nature, scale, dimensions of the image/video. One can have the desired matrix of the concat window, for that you need to give the input the list of the images in that nested or matrix format.
 
 **Also, If the length of the nested lists are not same, then the nested list with maximum length would be the length of the final output image and the lists with less number of image/video element would be replaced by blanked image**
+
+---
+
+### ***Concatinated Image:***
+    imgConcat = [[image, Canny, warpImg, warpGray],
+                  [img_cont_circle, threshold, imgResult, imgRawDraw],
+                  [imgInverseWarp, imgFinal]]
+![plot](https://github.com/sahilgarg3/Checking-OMR-Sheets/blob/main/Pictures/OMR_concat.png)
+
+### ***Result/ Final Output:***
+![plot](https://github.com/sahilgarg3/Checking-OMR-Sheets/blob/main/Pictures/OMR_result.png)
